@@ -33,9 +33,15 @@
 .Trashes
 ehthumbs.db
 Thumbs.db 
-*.*~
 
 # Folders #
 ##############
 target/
 build/
+.settings/
+
+# Else #
+################
+*.*~
+.classpath
+.project

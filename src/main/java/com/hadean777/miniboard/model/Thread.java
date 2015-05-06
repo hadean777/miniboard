@@ -15,7 +15,7 @@ public class Thread {
 	}
 	
 	/**
-	 * Returns UID of Post
+	 * Returns UID of Thread
 	 * @return {@link long}
 	 */
 	public long getUid(){
@@ -23,7 +23,7 @@ public class Thread {
 	}
 	
 	/**
-	 * Sets UID of Post
+	 * Sets UID of Thread
 	 * @param p_uid {@link long}
 	 */
 	public void setUid(long p_uid){
@@ -31,7 +31,7 @@ public class Thread {
 	}
 	
 	/**
-	 * Returns message of Post
+	 * Returns message of Thread
 	 * @return {@link String}
 	 */
 	public String getMessage(){
@@ -39,7 +39,7 @@ public class Thread {
 	}
 	
 	/**
-	 * Sets message of Post
+	 * Sets message of Thread
 	 * @param p_message {@link String}
 	 */
 	public void setMessage(String p_message){
@@ -47,7 +47,7 @@ public class Thread {
 	}
 	
 	/**
-	 * Returns posts of Post
+	 * Returns posts of Thread
 	 * @return {@link List<Post>}
 	 */
 	public List<Post> getPosts(){
@@ -55,7 +55,7 @@ public class Thread {
 	}
 	
 	/**
-	 * Sets posts of Post
+	 * Sets posts of Thread
 	 * @param p_posts {@link List<Post>}
 	 */
 	public void setMessage(List<Post> p_posts){
