@@ -1,9 +1,12 @@
 package com.hadean777.miniboard.model;
 
+import java.util.Date;
+
 public class Post {
 	
 	private Long uid;
 	private String message;
+	private Date timestamp;
 	
 	/**
 	 * Default constructor
@@ -41,6 +44,22 @@ public class Post {
 	 */
 	public void setMessage(String p_message){
 		message = p_message;
+	}
+	
+	/**
+	 * Returns timestamp of Post
+	 * @return {@link Date}
+	 */
+	public Date getTimestamp(){
+		return timestamp;
+	}
+	
+	/**
+	 * Sets timestamp of Post
+	 * @param p_timestamp {@link Date}
+	 */
+	public void setTimestamp(Date p_timestamp){
+		timestamp = p_timestamp;
 	}
 
 }

@@ -2,6 +2,7 @@ package com.hadean777.miniboard.persistence.pojo;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -31,8 +32,8 @@ public class Thread implements Serializable {
 	private String message;
 	
 	@OrderBy("POST_UID")
-	@OneToMany(cascade = {CascadeType.ALL}, mappedBy = "thread", fetch = FetchType.LAZY)
-	private List<Post> posts;
+	@OneToMany(cascade = {CascadeType.ALL}, mappedBy = "thread", fetch = FetchType.EAGER)
+	private List<Post> posts = new ArrayList<Post>();
 	
 	@Column(name = "ADDED_TS", insertable = false, updatable = false)
 	private Timestamp  addedTS;

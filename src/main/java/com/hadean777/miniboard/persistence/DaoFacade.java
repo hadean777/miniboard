@@ -18,12 +18,19 @@ public class DaoFacade {
 	@Autowired
 	private ThreadDAO threadDao;
 	
+	@Autowired
+	private PostDAO postDao;
+	
 	
 	//----------------------------------
 	
 	
 	public ThreadDAO getThreadDao() {
 		return threadDao;
+	}
+	
+	public PostDAO getPostDao() {
+		return postDao;
 	}
 
 	

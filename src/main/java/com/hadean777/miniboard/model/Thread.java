@@ -1,5 +1,6 @@
 package com.hadean777.miniboard.model;
 
+import java.util.Date;
 import java.util.List;
 
 public class Thread {
@@ -7,6 +8,7 @@ public class Thread {
 	private Long uid;
 	private String message;
 	private List<Post> posts;
+	private Date timestamp;
 	
 	/**
 	 * Default constructor
@@ -60,6 +62,22 @@ public class Thread {
 	 */
 	public void setPosts(List<Post> p_posts){
 		posts = p_posts;
+	}
+	
+	/**
+	 * Returns timestamp of Post
+	 * @return {@link Date}
+	 */
+	public Date getTimestamp(){
+		return timestamp;
+	}
+	
+	/**
+	 * Sets timestamp of Post
+	 * @param p_timestamp {@link Date}
+	 */
+	public void setTimestamp(Date p_timestamp){
+		timestamp = p_timestamp;
 	}
 
 }
