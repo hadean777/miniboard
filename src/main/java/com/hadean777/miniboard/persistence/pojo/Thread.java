@@ -2,35 +2,37 @@ package com.hadean777.miniboard.persistence.pojo;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name = "POSTS")
+@Table(name = "THREADS")
 @SequenceGenerator(name = "TOTAL_SEQ", sequenceName = "TOTAL_SEQ")
-public class Post implements Serializable {
+public class Thread implements Serializable {
 	
-	private static final long serialVersionUID = -571682967051060717L;
+	private static final long serialVersionUID = -834624019241168991L;
 
 	@Id
 	@GeneratedValue(generator="TOTAL_SEQ")
-	@Column(name = "POST_UID", nullable = false)
+	@Column(name = "THREAD_UID", nullable = false)
 	private Long uid;
-	
-	@ManyToOne
-	@JoinColumn(name = "THREAD_UID", nullable = false)
-	private Thread thread;
 	
 	@Column(name = "MESSAGE")
 	private String message;
+	
+	@OrderBy("POST_UID")
+	@OneToMany(cascade = {CascadeType.ALL}, mappedBy = "thread", fetch = FetchType.LAZY)
+	private List<Post> posts;
 	
 	@Column(name = "ADDED_TS", insertable = false, updatable = false)
 	private Timestamp  addedTS;
@@ -38,14 +40,15 @@ public class Post implements Serializable {
 	@Column(name = "MODIFIED_TS", insertable = false, updatable = false)
 	private Timestamp  modifiedTS;
 	
+	
 	/**
 	 * Default constructor
 	 */
-	public Post(){
+	public Thread(){
 	}
 	
 	/**
-	 * Returns UID of Post
+	 * Returns UID of Thread
 	 * @return {@link Long}
 	 */
 	public Long getUid(){
@@ -53,7 +56,7 @@ public class Post implements Serializable {
 	}
 	
 	/**
-	 * Sets UID of Post
+	 * Sets UID of Thread
 	 * @param p_uid {@link Long}
 	 */
 	public void setUid(Long p_uid){
@@ -61,23 +64,7 @@ public class Post implements Serializable {
 	}
 	
 	/**
-	 * Returns thread of Post
-	 * @return {@link Thread}
-	 */
-	public Thread getThread(){
-		return thread;
-	}
-	
-	/**
-	 * Sets thread of Post
-	 * @param p_thread {@link Thread}
-	 */
-	public void setThread(Thread p_thread){
-		thread = p_thread;
-	}
-	
-	/**
-	 * Returns message of Post
+	 * Returns message of Thread
 	 * @return {@link String}
 	 */
 	public String getMessage(){
@@ -85,7 +72,7 @@ public class Post implements Serializable {
 	}
 	
 	/**
-	 * Sets message of Post
+	 * Sets message of Thread
 	 * @param p_message {@link String}
 	 */
 	public void setMessage(String p_message){
@@ -93,7 +80,23 @@ public class Post implements Serializable {
 	}
 	
 	/**
-	 * Returns added TS of Post
+	 * Returns posts of Thread
+	 * @return {@link List<Post>}
+	 */
+	public List<Post> getPosts(){
+		return posts;
+	}
+	
+	/**
+	 * Sets posts of Thread
+	 * @param p_posts {@link List<Post>}
+	 */
+	public void setPosts(List<Post> p_posts){
+		posts = p_posts;
+	}
+	
+	/**
+	 * Returns added TS of Thread
 	 * @return {@link Timestamp}
 	 */
 	public Timestamp getAddedTS() {
@@ -101,7 +104,7 @@ public class Post implements Serializable {
 	}
 	
 	/**
-	 * Returns modified TS of Post
+	 * Returns modified TS of Thread
 	 * @return {@link Timestamp}
 	 */
 	public Timestamp getModifiedTS() {

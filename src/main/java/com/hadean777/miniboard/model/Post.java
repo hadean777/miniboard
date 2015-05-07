@@ -2,7 +2,7 @@ package com.hadean777.miniboard.model;
 
 public class Post {
 	
-	private long uid;
+	private Long uid;
 	private String message;
 	
 	/**
@@ -13,17 +13,17 @@ public class Post {
 	
 	/**
 	 * Returns UID of Post
-	 * @return {@link long}
+	 * @return {@link Long}
 	 */
-	public long getUid(){
+	public Long getUid(){
 		return uid;
 	}
 	
 	/**
 	 * Sets UID of Post
-	 * @param p_uid {@link long}
+	 * @param p_uid {@link Long}
 	 */
-	public void setUid(long p_uid){
+	public void setUid(Long p_uid){
 		uid = p_uid;
 	}
 	

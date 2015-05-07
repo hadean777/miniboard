@@ -15,6 +15,16 @@ import com.hadean777.miniboard.persistence.dao.*;
 @Component("daoFacade")
 public class DaoFacade {	
 	
+	@Autowired
+	private ThreadDAO threadDao;
+	
+	
+	//----------------------------------
+	
+	
+	public ThreadDAO getThreadDao() {
+		return threadDao;
+	}
 
 	
 }

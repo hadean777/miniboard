@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Thread {
 	
-	private long uid;
+	private Long uid;
 	private String message;
 	private List<Post> posts;
 	
@@ -16,17 +16,17 @@ public class Thread {
 	
 	/**
 	 * Returns UID of Thread
-	 * @return {@link long}
+	 * @return {@link Long}
 	 */
-	public long getUid(){
+	public Long getUid(){
 		return uid;
 	}
 	
 	/**
 	 * Sets UID of Thread
-	 * @param p_uid {@link long}
+	 * @param p_uid {@link Long}
 	 */
-	public void setUid(long p_uid){
+	public void setUid(Long p_uid){
 		uid = p_uid;
 	}
 	
@@ -58,7 +58,7 @@ public class Thread {
 	 * Sets posts of Thread
 	 * @param p_posts {@link List<Post>}
 	 */
-	public void setMessage(List<Post> p_posts){
+	public void setPosts(List<Post> p_posts){
 		posts = p_posts;
 	}
 

@@ -8,5 +8,6 @@
 </head>
 <body>
 <p>This is main page</p>
+<p>${outstr}</p>
 </body>
 </html>

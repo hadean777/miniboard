@@ -9,7 +9,7 @@ package com.hadean777.miniboard;
  */
 public class AppConstants {
 
-	public final static String MANAGER_BEAN_NAVIG_MANAGER = "navigManager";
+	public final static String MANAGER_BEAN_THREAD_MANAGER = "threadManager";
 	
     public final static String MSG_KEY_ERROR_PARAMS_NULL = "error.params.null";
     public final static String MSG_KEY_ERROR_LOG = "common.error.log";
