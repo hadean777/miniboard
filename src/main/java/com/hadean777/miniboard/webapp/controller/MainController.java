@@ -27,34 +27,21 @@ public class MainController {
 		
 		String outstr = "";
 		int i = 0;
+		int j = 0;
 		
-		Thread thread = new Thread();
+		List<Thread> allThreads = threadManager.getAllThreads();
 		
-		thread.setMessage("second thread");
-		
-		Long uid = threadManager.saveThread(thread);
-		
-		thread = new Thread();
-		
-		thread = threadManager.getThreadByUID(uid);
-		
-		outstr += "Thread: " + thread.getUid() + "  " + thread.getMessage() + " " + thread.getTimestamp() + "<br>";
-		
-		Post post = new Post();
-		post.setMessage("post message");
-		uid = threadManager.addPost(post, thread.getUid());
-		
-		post = new Post();
-		post.setMessage("second post message");
-		uid = threadManager.addPost(post, thread.getUid());
-		
-		List<Post> postList = threadManager.getNewPosts(thread.getUid());
-		
-		if (postList != null){
-			for (i = 0; i < postList.size(); i++){
-				outstr += "№" + postList.get(i).getUid() + " " + postList.get(i).getMessage() + " " + postList.get(i).getTimestamp();
+		if (allThreads != null){
+			for (i = 0; i < allThreads.size(); i++){
+				outstr += "Thread №" + allThreads.get(i).getUid() + " " + allThreads.get(i).getTimestamp() + " " + allThreads.get(i).getMessage() + "<br>";
+				if (allThreads.get(i).getPosts() != null){
+					for (j = 0; j < allThreads.get(i).getPosts().size(); j++){
+						outstr += "    Post №" + allThreads.get(i).getPosts().get(j).getUid() + " " + allThreads.get(i).getPosts().get(j).getTimestamp() + " " + allThreads.get(i).getPosts().get(j).getMessage() + "<br>";
+					}
+				}
 			}
 		}
+		
 		
 		return new ModelAndView("mainPage", "outstr", outstr);
 	}

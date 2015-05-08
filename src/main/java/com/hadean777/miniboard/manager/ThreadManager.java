@@ -17,6 +17,13 @@ public interface ThreadManager {
 	public Thread getThreadByUID(Long p_uid) throws DAOException;
 	
 	/**
+	 * Returns list of all threads <br>
+	 * 
+	 * @return {@link List<Thread>}
+	 */
+    public List<Thread> getAllThreads() throws DAOException;
+	
+	/**
 	 * Save Thread to DB. <br>
 	 * @param p_thread - Thread; {@link Thread}
 	 * @return {@link Long}

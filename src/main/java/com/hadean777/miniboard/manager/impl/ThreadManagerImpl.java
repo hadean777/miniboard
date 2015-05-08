@@ -48,6 +48,43 @@ public class ThreadManagerImpl implements ThreadManager {
 		return thread;
 	}
 	
+	public List<Thread> getAllThreads() throws DAOException{
+		
+		List<Thread> result = null;
+		
+		List<com.hadean777.miniboard.persistence.pojo.Thread> pThreadList = daoFacade.getThreadDao().getAllThreads();
+		
+		if (pThreadList != null){
+			int i = 0;
+			int j = 0;
+			result = new ArrayList<Thread>();
+			Thread element = null;
+			for (i = 0; i < pThreadList.size(); i++){
+				element = new Thread();
+				element.setUid(pThreadList.get(i).getUid());
+				element.setMessage(pThreadList.get(i).getMessage());
+				element.setTimestamp(pThreadList.get(i).getAddedTS());
+				
+				if (pThreadList.get(i).getPosts() != null){
+					List<Post> posts = new ArrayList<Post>();
+					Post singlePost = null;
+					for (j = 0; j < pThreadList.get(i).getPosts().size(); j++){
+						singlePost = new Post();
+						singlePost.setUid(pThreadList.get(i).getPosts().get(j).getUid());
+						singlePost.setMessage(pThreadList.get(i).getPosts().get(j).getMessage());
+						singlePost.setTimestamp(pThreadList.get(i).getPosts().get(j).getAddedTS());
+						posts.add(singlePost);
+					}
+					element.setPosts(posts);
+				}
+				result.add(element);
+			}
+						
+		}
+		
+		return result;
+	}
+	
 	public Long saveThread(Thread p_thread) throws DAOException{
 		Long threadUID = null;
 		

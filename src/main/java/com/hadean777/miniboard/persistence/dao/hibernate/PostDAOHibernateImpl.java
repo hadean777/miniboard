@@ -32,7 +32,6 @@ implements PostDAO {
 		
 		List<Post> result = null;
 		try {
-//            Query query = getSession().getNamedQuery("from Stock where stockCode = :p_threadUid ");
 			Query query = getSession().createSQLQuery("select * from posts where THREAD_UID = :p_threadUid").addEntity(Post.class);
             query.setParameter("p_threadUid", p_threadUid);
             result = (List<Post>) query.list();
