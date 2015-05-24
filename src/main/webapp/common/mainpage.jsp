@@ -1,13 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Main Page</title>
+<script type="text/javascript">
+var threads = ${threadsObj};
+</script>
 </head>
 <body>
 <p>This is main page</p>
-<p>${outstr}</p>
+<div class="panel panel-default" style="margin-left:20px;">
+		      <div class="panel-heading">Thread list:</div>
+		      <div class="panel-body form-group" id="content" style="margin-bottom:0px;"></div>
+</div>
+<script type="text/x-jquery-tmpl" id="thread_template">
+	<div class="form-group thread-record row">
+ 		<div class="col-md-10">
+			<label for="\${uid}" style="margin-top: 6px;">\${uid}</label>
+		</div>
+		<div class="col-md-3">
+			<button type="button" class="btn btn-default">Sub</button>
+		</div>
+	</div>
+</script>
+<script src="../common/js/mainPage.js"></script>
 </body>
 </html>

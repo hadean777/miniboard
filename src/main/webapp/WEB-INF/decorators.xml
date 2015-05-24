@@ -3,7 +3,7 @@
 <!--<excludes>
         <pattern>/common/*</pattern>
     </excludes>-->
-	<decorator name="basic-page" page="basic-page.jsp">
+	<decorator name="layout-page" page="layout-page.jsp">
         <pattern>*.do</pattern>
     </decorator>
 </decorators>
