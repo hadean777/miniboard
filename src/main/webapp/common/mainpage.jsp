@@ -14,13 +14,14 @@ var threads = ${threadsObj};
 		      <div class="panel-heading">Thread list:</div>
 		      <div class="panel-body form-group" id="content" style="margin-bottom:0px;"></div>
 </div>
+<div style="margin:20px;">
+			<button type="button" class="btn btn-default" onclick="createNewThread()">Create New Thread</button>
+</div>
 <script type="text/x-jquery-tmpl" id="thread_template">
 	<div class="form-group thread-record row">
  		<div class="col-md-10">
 			<label for="\${uid}" style="margin-top: 6px;">\${uid}</label>
-		</div>
-		<div class="col-md-3">
-			<button type="button" class="btn btn-default">Sub</button>
+			<button type="button" class="btn btn-default">Reply</button>
 		</div>
 	</div>
 </script>

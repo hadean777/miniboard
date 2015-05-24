@@ -8,3 +8,7 @@ function renderThreadList(threadList) {
 		$('#thread_template').tmpl(threadList[i]).appendTo('#content');
 	}
 }
+
+function createNewThread () {
+	window.location.replace("../create_thread.do");
+}

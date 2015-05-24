@@ -6,6 +6,7 @@ import java.util.List;
 public class Thread {
 	
 	private Long uid;
+	private String name;
 	private String message;
 	private List<Post> posts;
 	private Date timestamp;
@@ -30,6 +31,22 @@ public class Thread {
 	 */
 	public void setUid(Long p_uid){
 		uid = p_uid;
+	}
+	
+	/**
+	 * Returns name of Thread
+	 * @return {@link String}
+	 */
+	public String getName(){
+		return name;
+	}
+	
+	/**
+	 * Sets name of Thread
+	 * @param p_name {@link String}
+	 */
+	public void setName(String p_name){
+		name = p_name;
 	}
 	
 	/**

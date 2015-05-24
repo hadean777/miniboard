@@ -40,5 +40,12 @@ public class MainController {
 		
 		return new ModelAndView("mainPage", "threadsObj", jsonThreads);
 	}
+	
+	@RequestMapping(value = "/create_thread.do", method = RequestMethod.GET)
+	public ModelAndView createThread(){
+		
+		
+		return new ModelAndView("mainPage");
+	}
 
 }
