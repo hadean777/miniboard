@@ -9,6 +9,6 @@ function renderThreadList(threadList) {
 	}
 }
 
-function createNewThread () {
+function createNewThread() {
 	window.location.replace("../create_thread.do");
 }

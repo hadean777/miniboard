@@ -45,7 +45,7 @@ public class MainController {
 	public ModelAndView createThread(){
 		
 		
-		return new ModelAndView("mainPage");
+		return new ModelAndView("createThread");
 	}
 
 }

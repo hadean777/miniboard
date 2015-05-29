@@ -10,6 +10,7 @@
 	<bean id="customAuthManager" class="com.hadean777.miniboard.auth.AppAuthManager"/>
 	
 	<security:http auto-config="true" authentication-manager-ref="customAuthManager">
+		<security:intercept-url pattern="/*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 		<security:intercept-url pattern="/common/*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 		<security:intercept-url pattern="/css/*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 		<security:intercept-url pattern="/images/*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>

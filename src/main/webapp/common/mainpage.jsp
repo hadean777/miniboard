@@ -9,7 +9,6 @@ var threads = ${threadsObj};
 </script>
 </head>
 <body>
-<p>This is main page</p>
 <div class="panel panel-default" style="margin-left:20px;">
 		      <div class="panel-heading">Thread list:</div>
 		      <div class="panel-body form-group" id="content" style="margin-bottom:0px;"></div>
