@@ -32,7 +32,7 @@ implements PostDAO {
 		
 		List<Post> result = null;
 		try {
-			Query query = getSession().createSQLQuery("select * from posts where THREAD_UID = :p_threadUid").addEntity(Post.class);
+			Query query = getSession().createSQLQuery("select * from posts where THREAD_UID = :p_threadUid order by POST_UID").addEntity(Post.class);
             query.setParameter("p_threadUid", p_threadUid);
             result = (List<Post>) query.list();
         } catch (HibernateException e) {

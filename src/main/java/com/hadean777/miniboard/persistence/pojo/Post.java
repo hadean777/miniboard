@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @SequenceGenerator(name = "TOTAL_SEQ", sequenceName = "TOTAL_SEQ")
 public class Post implements Serializable {
 	
-	private static final long serialVersionUID = -571682967051060717L;
+	private static final long serialVersionUID = -8201830392031508449L;
 
 	@Id
 	@GeneratedValue(generator="TOTAL_SEQ")
@@ -28,6 +28,9 @@ public class Post implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "THREAD_UID", nullable = false)
 	private Thread thread;
+	
+	@Column(name = "NAME")
+	private String name;
 	
 	@Column(name = "MESSAGE")
 	private String message;
@@ -74,6 +77,22 @@ public class Post implements Serializable {
 	 */
 	public void setThread(Thread p_thread){
 		thread = p_thread;
+	}
+	
+	/**
+	 * Returns name of Post
+	 * @return {@link String}
+	 */
+	public String getName(){
+		return name;
+	}
+	
+	/**
+	 * Sets name of Post
+	 * @param p_name {@link String}
+	 */
+	public void setName(String p_name){
+		name = p_name;
 	}
 	
 	/**

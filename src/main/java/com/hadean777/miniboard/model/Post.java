@@ -5,6 +5,7 @@ import java.util.Date;
 public class Post {
 	
 	private Long uid;
+	private String name;
 	private String message;
 	private Date timestamp;
 	
@@ -28,6 +29,22 @@ public class Post {
 	 */
 	public void setUid(Long p_uid){
 		uid = p_uid;
+	}
+	
+	/**
+	 * Returns name of Post
+	 * @return {@link String}
+	 */
+	public String getName(){
+		return name;
+	}
+	
+	/**
+	 * Sets name of Post
+	 * @param p_name {@link String}
+	 */
+	public void setName(String p_name){
+		name = p_name;
 	}
 	
 	/**

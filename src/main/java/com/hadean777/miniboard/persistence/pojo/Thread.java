@@ -21,12 +21,15 @@ import javax.persistence.Table;
 @SequenceGenerator(name = "TOTAL_SEQ", sequenceName = "TOTAL_SEQ")
 public class Thread implements Serializable {
 	
-	private static final long serialVersionUID = -834624019241168991L;
+	private static final long serialVersionUID = -6143407270647654113L;
 
 	@Id
 	@GeneratedValue(generator="TOTAL_SEQ")
 	@Column(name = "THREAD_UID", nullable = false)
 	private Long uid;
+	
+	@Column(name = "NAME")
+	private String name;
 	
 	@Column(name = "MESSAGE")
 	private String message;
@@ -62,6 +65,22 @@ public class Thread implements Serializable {
 	 */
 	public void setUid(Long p_uid){
 		uid = p_uid;
+	}
+	
+	/**
+	 * Returns name of Thread
+	 * @return {@link String}
+	 */
+	public String getName(){
+		return name;
+	}
+	
+	/**
+	 * Sets name of Thread
+	 * @param p_name {@link String}
+	 */
+	public void setName(String p_name){
+		name = p_name;
 	}
 	
 	/**
