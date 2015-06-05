@@ -19,8 +19,9 @@ var threads = ${threadsObj};
 <script type="text/x-jquery-tmpl" id="thread_template">
 	<div class="form-group thread-record row">
  		<div class="col-md-10">
-			<label for="\${uid}" style="margin-top: 6px;">\${uid}</label>
-			<button type="button" class="btn btn-default">Reply</button>
+			<label for="\${uid}" style="margin: 6px;">\${uid}</label>
+			<label for="\${name}" style="margin: 6px;">\${name}</label>
+			<button type="button" class="btn btn-default" onclick="replyOnThread(\${uid})">Reply</button>
 		</div>
 	</div>
 </script>

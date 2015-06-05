@@ -135,6 +135,7 @@ public class ThreadManagerImpl implements ThreadManager {
 			if (p_thread != null){
 				com.hadean777.miniboard.persistence.pojo.Thread pThread = new com.hadean777.miniboard.persistence.pojo.Thread();
 				pThread.setUid(p_thread.getUid());
+				pThread.setName(p_thread.getName());
 				pThread.setMessage(p_thread.getMessage());
 				
 				daoFacade.getThreadDao().saveOrUpdate(pThread);

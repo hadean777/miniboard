@@ -23,6 +23,11 @@
 <decorator:head />
 </head>
 <body>
+    <ul class="nav nav-pills">
+    <li class="active" style="margin: 10px">
+    <a href="../common/mainpage.do">Main</a>
+    </li>
+    </ul>
 <decorator:body />
 </body>
 </html>

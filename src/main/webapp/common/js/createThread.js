@@ -3,11 +3,11 @@ $(function () {
 });
 
 function createThread() {
+	var name = $('#threadname').val();
 	var mes = $('#message1').val();
-//	alert(mes);
 	var data = new FormData();
 	
-//	data.append('name', name);
+	data.append('name', name);
 	data.append('data', mes);
 	
 	$.ajax({

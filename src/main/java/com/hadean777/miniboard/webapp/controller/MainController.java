@@ -55,12 +55,14 @@ public class MainController {
 	
 	@RequestMapping(value = "/common/createThread.do", method = RequestMethod.POST)
 	@ResponseBody
-	public AjaxResult createThread(@RequestParam String data) throws UnsupportedEncodingException {
+	public AjaxResult createThread(@RequestParam String name,
+									@RequestParam String data) throws UnsupportedEncodingException {
 		
 		AjaxResult result = new AjaxResult();
 		
 		try {
 			Thread thread = new Thread();
+			thread.setName(name);
 			thread.setMessage(data);
 			Long uid = threadManager.createNewThread(thread);
 			result.setData(uid);

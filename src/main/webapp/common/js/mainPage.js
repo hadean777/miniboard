@@ -12,3 +12,8 @@ function renderThreadList(threadList) {
 function createNewThread() {
 	window.location.replace("../common/create_thread.do");
 }
+
+function replyOnThread(uid) {
+
+	window.location.replace("../common/viewThread.do?uid=" + uid);
+}
