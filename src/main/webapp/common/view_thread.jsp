@@ -25,5 +25,14 @@ ${threadMessage}
 		</div>
 	</div>
 </script>
+	<div class="form-group">
+		<input id="threaduid" type="hidden" value=${threadUid}></input>
+		<label for="postname">Post name:</label>
+  		<input class="form-control" id="postname" type="text"></input>
+  		<label for="postmes">Your post:</label>
+  		<textarea class="form-control" rows="15" id="postmes"></textarea>
+  		<button type="button" class="btn btn-default" onclick="addPost()" style="margin: 6px">Add post</button><br>
+	</div>
+<script src="../common/js/viewThread.js"></script>
 </body>
 </html>

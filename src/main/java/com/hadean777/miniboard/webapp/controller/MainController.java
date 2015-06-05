@@ -73,31 +73,5 @@ public class MainController {
 		return result;
 	}
 	
-	@RequestMapping(value = "/common/viewThread.do", method = RequestMethod.GET)
-	public ModelAndView viewThread(@RequestParam Long uid){
-		
-		ModelAndView model = new ModelAndView("viewThread");
-		
-		Thread thread = threadManager.getThreadByUID(uid);
-		
-		if (thread != null) {
-			model.addObject("threadUid", thread.getUid());
-			model.addObject("threadName", thread.getName());
-			model.addObject("threadMessage", thread.getMessage());
-			if (thread.getPosts() != null){
-				ObjectMapper mapper = new ObjectMapper();
-				String jsonPosts = "{}";
-				try {
-					jsonPosts = mapper.writeValueAsString(thread.getPosts());
-					
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				model.addObject("postsObj", jsonPosts);
-			}
-		}
-		
-		return model;
-	}
 
 }
