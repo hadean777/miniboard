@@ -17,10 +17,15 @@ ${threadMessage}
 		      <div class="panel-body form-group" id="content" style="margin-bottom:0px;"></div>
 </div>
 <script type="text/x-jquery-tmpl" id="post_template">
-	<div class="form-group post-record row">
- 		<div class="col-md-10">
+	<div class="form-group post-record row" style="padding: 5px; border: 1px solid grey">
+		
+ 		<div class="col-sm-4">
 			<label for="\${uid}" style="margin-top: 6px;">\${uid}</label>
-			<label for="\${name}" style="margin-top: 6px;">\${name}</label><br>
+		</div>
+		<div class="col-md-10">
+			<label for="\${name}" style="margin-top: 6px;">\${name}</label>
+		</div>
+		<div class="row">
 			<label for="\${message}" style="margin-top: 6px;">\${message}</label>
 		</div>
 	</div>
