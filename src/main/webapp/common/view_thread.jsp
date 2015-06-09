@@ -28,7 +28,7 @@ var posts = ${postsObj};
 			\${name}
 		</div>
 		<div class="col-sm-12">
-			<p align="justify">\${message}</p>
+			<p align="justify">{{html message}}</p>
 		</div>
 	</div>
 </script>
