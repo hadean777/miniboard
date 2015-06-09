@@ -1,5 +1,9 @@
 package com.hadean777.miniboard.manager;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.stereotype.Service;
 
 import com.hadean777.miniboard.AppConstants;
@@ -38,6 +42,17 @@ public class TextConverterService {
 	        }
 	    }
 	    return builder.toString();
+	}
+	
+	public String dateToString(Date date){
+		String result = null;
+		
+		if (date != null){
+			DateFormat format = new SimpleDateFormat(AppConstants.DATE_FORMAT);
+			result = format.format(date);
+		}
+				
+		return result;
 	}
 
 }

@@ -11,7 +11,8 @@ var posts = ${postsObj};
 <body>
 <div class="form-group row" style="margin: 10px; padding: 5px; border: 1px solid grey">
 	<div class="col-sm-4"><p class="lead"><b>${threadUid}</b></p></div>	
-	<div class="col-sm-8"> <p class="lead"><b>${threadName}</b></p></div>
+	<div class="col-sm-4"> <p class="lead"><b>${threadName}</b></p></div>
+	<div class="col-sm-4"> <p class="lead" align="right"><b>${threadTime}</b></p></div>
 	<div class="col-sm-12"><p align="justify">${threadMessage}</p></div>
 </div>
 
@@ -22,10 +23,13 @@ var posts = ${postsObj};
 	<div class="form-group post-record row" style="padding: 5px; border: 1px solid grey">
 		
  		<div class="col-sm-4">
-			<label for="\${uid}">\${uid}</label>
+			<p class="lead"><b>\${uid}</b></p>
 		</div>
-		<div class="col-sm-8">
-			\${name}
+		<div class="col-sm-4">
+			<p class="lead"><b>\${name}</b></p>
+		</div>
+		<div class="col-sm-4">
+			<p class="lead" align="right"><b>\${time}</b></p>
 		</div>
 		<div class="col-sm-12">
 			<p align="justify">{{html message}}</p>

@@ -7,6 +7,7 @@ public class Post {
 	private Long uid;
 	private String name;
 	private String message;
+	private String time;
 	private Date timestamp;
 	
 	/**
@@ -57,10 +58,26 @@ public class Post {
 	
 	/**
 	 * Sets message of Post
-	 * @param p_uid {@link String}
+	 * @param p_message {@link String}
 	 */
 	public void setMessage(String p_message){
 		message = p_message;
+	}
+	
+	/**
+	 * Returns time of Post
+	 * @return {@link String}
+	 */
+	public String getTime(){
+		return time;
+	}
+	
+	/**
+	 * Sets time of Post
+	 * @param p_time {@link String}
+	 */
+	public void setTime(String p_time){
+		time = p_time;
 	}
 	
 	/**

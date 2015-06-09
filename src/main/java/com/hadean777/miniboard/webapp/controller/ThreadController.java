@@ -41,6 +41,7 @@ public class ThreadController {
 		if (thread != null) {
 			model.addObject("threadUid", thread.getUid());
 			model.addObject("threadName", thread.getName());
+			model.addObject("threadTime", thread.getTime());
 			model.addObject("threadMessage", thread.getMessage());
 			if (thread.getPosts() != null){
 				ObjectMapper mapper = new ObjectMapper();

@@ -8,6 +8,7 @@ public class Thread {
 	private Long uid;
 	private String name;
 	private String message;
+	private String time;
 	private List<Post> posts;
 	private Date timestamp;
 	
@@ -63,6 +64,22 @@ public class Thread {
 	 */
 	public void setMessage(String p_message){
 		message = p_message;
+	}
+	
+	/**
+	 * Returns time of Thread
+	 * @return {@link String}
+	 */
+	public String getTime(){
+		return time;
+	}
+	
+	/**
+	 * Sets time of Thread
+	 * @param p_time {@link String}
+	 */
+	public void setTime(String p_time){
+		time = p_time;
 	}
 	
 	/**

@@ -17,7 +17,7 @@ public class AppConstants {
     
 
     //Date format
-    public final static String DATE_FORMAT = "yyyy-MM-dd";
+    public final static String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
     
     //Other constants
     public static final int	ATTACHMENT_MAX_SIZE = 20971520;

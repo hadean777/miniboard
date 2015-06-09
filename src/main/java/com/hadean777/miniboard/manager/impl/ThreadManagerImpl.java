@@ -11,6 +11,7 @@ import com.hadean777.miniboard.AppConstants;
 import com.hadean777.miniboard.exception.BusinessLogicException;
 import com.hadean777.miniboard.exception.DAOException;
 import com.hadean777.miniboard.manager.ThreadManager;
+import com.hadean777.miniboard.manager.TextConverterService;
 import com.hadean777.miniboard.persistence.DaoFacade;
 import com.hadean777.miniboard.model.Thread;
 import com.hadean777.miniboard.model.Post;
@@ -20,6 +21,9 @@ public class ThreadManagerImpl implements ThreadManager {
 	
 	@Autowired
 	private DaoFacade daoFacade;
+	
+	@Autowired
+	private TextConverterService tcs;
 	
 	
 	public Thread getThreadByUID(Long p_uid) throws BusinessLogicException{
@@ -40,12 +44,14 @@ public class ThreadManagerImpl implements ThreadManager {
 						element.setUid(pThread.getPosts().get(i).getUid());
 						element.setName(pThread.getPosts().get(i).getName());
 						element.setMessage(pThread.getPosts().get(i).getMessage());
-						element.setTimestamp(new Date(pThread.getPosts().get(i).getAddedTS().getTime()));
+						element.setTime(tcs.dateToString(pThread.getPosts().get(i).getAddedTS()));
+						element.setTimestamp(pThread.getPosts().get(i).getAddedTS());
 						posts.add(element);
 					}
 					thread.setPosts(posts);
 				}
-				thread.setTimestamp(new Date(pThread.getAddedTS().getTime()));
+				thread.setTime(tcs.dateToString(pThread.getAddedTS()));
+				thread.setTimestamp(pThread.getAddedTS());
 			}
 		
 		} catch (DAOException ex) {
@@ -71,6 +77,7 @@ public class ThreadManagerImpl implements ThreadManager {
 					element.setUid(pThreadList.get(i).getUid());
 					element.setName(pThreadList.get(i).getName());
 					element.setMessage(pThreadList.get(i).getMessage());
+					element.setTime(tcs.dateToString(pThreadList.get(i).getAddedTS()));
 					element.setTimestamp(pThreadList.get(i).getAddedTS());
 					
 					if (pThreadList.get(i).getPosts() != null){
@@ -81,6 +88,7 @@ public class ThreadManagerImpl implements ThreadManager {
 							singlePost.setUid(pThreadList.get(i).getPosts().get(j).getUid());
 							singlePost.setName(pThreadList.get(i).getPosts().get(j).getName());
 							singlePost.setMessage(pThreadList.get(i).getPosts().get(j).getMessage());
+							singlePost.setTime(tcs.dateToString(pThreadList.get(i).getPosts().get(j).getAddedTS()));
 							singlePost.setTimestamp(pThreadList.get(i).getPosts().get(j).getAddedTS());
 							posts.add(singlePost);
 						}
@@ -182,6 +190,7 @@ public class ThreadManagerImpl implements ThreadManager {
 						element.setUid(postList.get(i).getUid());
 						element.setName(postList.get(i).getName());
 						element.setMessage(postList.get(i).getMessage());
+						element.setTime(tcs.dateToString(postList.get(i).getAddedTS()));
 						element.setTimestamp(postList.get(i).getAddedTS());
 						result.add(element);
 					}
