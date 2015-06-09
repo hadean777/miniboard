@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hadean777.miniboard.AppConstants;
 import com.hadean777.miniboard.exception.BusinessLogicException;
+import com.hadean777.miniboard.manager.TextConverterService;
 import com.hadean777.miniboard.manager.ThreadManager;
 import com.hadean777.miniboard.model.AjaxResult;
 import com.hadean777.miniboard.model.Thread;
@@ -26,6 +27,10 @@ public class MainController {
 	@Autowired
 	@Qualifier(AppConstants.MANAGER_BEAN_THREAD_MANAGER)
 	private ThreadManager threadManager;
+	
+	@Autowired
+	@Qualifier(AppConstants.MANAGER_BEAN_TEXT_CONVERTER_SERVICE)
+	private TextConverterService textConverterService;
 	
 	@RequestMapping(value = "/common/mainpage.do", method = RequestMethod.GET)
 	public ModelAndView showMainPage(){
@@ -63,7 +68,7 @@ public class MainController {
 		try {
 			Thread thread = new Thread();
 			thread.setName(name);
-			thread.setMessage(data);
+			thread.setMessage(textConverterService.textToHtml(data));
 			Long uid = threadManager.createNewThread(thread);
 			result.setData(uid);
 			result.setSuccess(true);

@@ -9,10 +9,12 @@ var posts = ${postsObj};
 </script>
 </head>
 <body>
-<div class="form-group">
-${threadUid}	${threadName}<br>
-${threadMessage}
+<div class="form-group row" style="margin: 10px; padding: 5px; border: 1px solid grey">
+	<div class="col-sm-4"><p class="lead"><b>${threadUid}</b></p></div>	
+	<div class="col-sm-8"> <p class="lead"><b>${threadName}</b></p></div>
+	<div class="col-sm-12"><p align="justify">${threadMessage}</p></div>
 </div>
+
 <div class="panel panel-default" style="margin-left:20px;">
 		      <div class="panel-body form-group" id="content" style="margin-bottom:0px;"></div>
 </div>
@@ -20,18 +22,18 @@ ${threadMessage}
 	<div class="form-group post-record row" style="padding: 5px; border: 1px solid grey">
 		
  		<div class="col-sm-4">
-			<label for="\${uid}" style="margin-top: 6px;">\${uid}</label>
+			<label for="\${uid}">\${uid}</label>
 		</div>
-		<div class="col-md-10">
-			<label for="\${name}" style="margin-top: 6px;">\${name}</label>
+		<div class="col-sm-8">
+			\${name}
 		</div>
-		<div class="row">
-			<label for="\${message}" style="margin-top: 6px;">\${message}</label>
+		<div class="col-sm-12">
+			<p align="justify">\${message}</p>
 		</div>
 	</div>
 </script>
-	<div class="form-group">
-		<input id="threaduid" type="hidden" value=${threadUid}></input>
+	<div class="form-group" style="margin: 10px;">
+		<input id="threaduid" type="hidden" value="${threadUid}"></input>
 		<label for="postname">Post name:</label>
   		<input class="form-control" id="postname" type="text"></input>
   		<label for="postmes">Your post:</label>
