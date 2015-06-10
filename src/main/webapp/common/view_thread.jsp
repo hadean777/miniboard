@@ -9,24 +9,25 @@ var posts = ${postsObj};
 </script>
 </head>
 <body>
-<div class="form-group row" style="margin: 10px; padding: 5px; border: 1px solid grey">
+<div class="form-group row" style="margin: 10px; padding: 5px; border: 1px solid grey;">
 	<div class="col-sm-4"><p class="lead"><b>${threadUid}</b></p></div>	
-	<div class="col-sm-4"> <p class="lead"><b>${threadName}</b></p></div>
-	<div class="col-sm-4"> <p class="lead" align="right"><b>${threadTime}</b></p></div>
+	<div class="col-sm-4"><p class="lead" style="color: blue;"><b>${threadName}</b></p></div>
+	<div class="col-sm-4"><p class="lead" align="right"><b>${threadTime}</b></p></div>
 	<div class="col-sm-12"><p align="justify">${threadMessage}</p></div>
 </div>
 
-<div class="panel panel-default" style="margin-left:20px;">
+<!-- div class="panel panel-default" style="margin-left:20px; margin-right:10px;">
 		      <div class="panel-body form-group" id="content" style="margin-bottom:0px;"></div>
-</div>
+</div-->
+<div class="form-group" id="content" style="margin: 10px;"></div>
 <script type="text/x-jquery-tmpl" id="post_template">
-	<div class="form-group post-record row" style="padding: 5px; border: 1px solid grey">
+	<div class="form-group post-record row" style="margin: 10px; padding: 5px; border: 1px solid grey">
 		
  		<div class="col-sm-4">
 			<p class="lead"><b>\${uid}</b></p>
 		</div>
 		<div class="col-sm-4">
-			<p class="lead"><b>\${name}</b></p>
+			<p class="lead" style="color: blue;"><b>\${name}</b></p>
 		</div>
 		<div class="col-sm-4">
 			<p class="lead" align="right"><b>\${time}</b></p>

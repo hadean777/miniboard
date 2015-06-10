@@ -17,14 +17,17 @@ var threads = ${threadsObj};
 			<button type="button" class="btn btn-default" onclick="createNewThread()">Create New Thread</button>
 </div>
 <script type="text/x-jquery-tmpl" id="thread_template">
-	<div class="form-group thread-record row">
- 		<div class="col-md-10" style="padding: 5px; border: 1px solid grey">
-			<label for="\${uid}" style="margin: 6px;">\${uid}</label>
-			<label for="\${name}" style="margin: 6px;">\${name}</label>
-			<button type="button" class="btn btn-default" onclick="replyOnThread(\${uid})">Reply</button>
+	<div class="form-group thread-record row" style="padding: 5px; border: 1px solid grey">
+ 		<div class="col-sm-1"><p align="left"><label for="\${uid}" style="margin: 6px;">\${uid}</label></p></div>
+		<div class="col-sm-8"><p align="left" style="color: blue;"><label for="\${name}" style="margin: 6px;">\${name}</label></p></div>
+		<div class="col-sm-1"><p align="center"><button type="button" class="btn btn-default" onclick="replyOnThread(\${uid})">Reply</button></p></div>
+		<div class="col-sm-2"><p align="right"><label for="\${time}" style="margin: 6px;">\${time}</label></p></div>
+		<div class="col-sm-12">
+			<p align="justify">{{html message}}</p>
 		</div>
 	</div>
 </script>
 <script src="../common/js/mainPage.js"></script>
+<p align="center"></p>
 </body>
 </html>
