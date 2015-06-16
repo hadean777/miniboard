@@ -12,6 +12,6 @@ public interface PostDAO extends GenericDAO<Post, Long>  {
 	 * @param p_threadUid - UID of thread; {@link Post}
 	 * @return {@link List<Post>}
 	 */
-    public List<Post> getNewPosts(Long p_threadUid) throws DAOException;
+    public List<Post> getNewPosts(Long p_threadUid, Long p_lastPostUid) throws DAOException;
 
 }

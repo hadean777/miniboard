@@ -175,13 +175,13 @@ public class ThreadManagerImpl implements ThreadManager {
 		return postUID;
 	}
 	
-	public List<Post> getNewPosts(Long p_threadUid) throws BusinessLogicException{
+	public List<Post> getNewPosts(Long p_threadUid, Long p_lastPostUid) throws BusinessLogicException{
 		//TODO: return only new posts
 		
 		List<Post> result = null;
 		try {
 			if (p_threadUid != null){
-				List<com.hadean777.miniboard.persistence.pojo.Post> postList = daoFacade.getPostDao().getNewPosts(p_threadUid);
+				List<com.hadean777.miniboard.persistence.pojo.Post> postList = daoFacade.getPostDao().getNewPosts(p_threadUid, p_lastPostUid);
 				if (postList != null){
 					result = new ArrayList<Post>();
 					Post element = null;

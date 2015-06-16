@@ -24,7 +24,7 @@ implements PostDAO {
 	@Autowired
 	private MessageSource messageSource;
 	
-	public List<Post> getNewPosts(Long p_threadUid) throws DAOException{
+	public List<Post> getNewPosts(Long p_threadUid, Long p_lastPostUid) throws DAOException{
 		//TODO: return only new posts
 		if (p_threadUid == null) {
             throw new IllegalArgumentException(messageSource.getMessage(AppConstants.MSG_KEY_ERROR_PARAMS_NULL, new Object[]{"p_threadUid"}, null));
@@ -32,8 +32,9 @@ implements PostDAO {
 		
 		List<Post> result = null;
 		try {
-			Query query = getSession().createSQLQuery("select * from posts where THREAD_UID = :p_threadUid order by POST_UID").addEntity(Post.class);
+			Query query = getSession().createSQLQuery("select * from posts where THREAD_UID = :p_threadUid and POST_UID > :p_lastPostUid order by POST_UID").addEntity(Post.class);
             query.setParameter("p_threadUid", p_threadUid);
+            query.setParameter("p_lastPostUid", p_lastPostUid);
             result = (List<Post>) query.list();
         } catch (HibernateException e) {
             throw new DAOException(e);

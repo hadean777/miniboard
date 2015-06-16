@@ -46,9 +46,10 @@ public interface ThreadManager {
 	
 	/**
 	 * Returns list of new posts of the thread <br>
-	 * @param p_threadUid - UID of thread; {@link Post}
+	 * @param p_threadUid - UID of thread; {@link Long}
+	 * @param p_lastPostUid - UID of the last post in thread {@link Long}
 	 * @return {@link List<Post>}
 	 */
-	public List<Post> getNewPosts(Long p_threadUid) throws BusinessLogicException;
+	public List<Post> getNewPosts(Long p_threadUid, Long p_lastPostUid) throws BusinessLogicException;
 
 }
