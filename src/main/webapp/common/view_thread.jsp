@@ -37,6 +37,10 @@ var posts = ${postsObj};
 		</div>
 	</div>
 </script>
+<div class="form-group" id="getnewposts" style="margin: 10px;">
+	<input id="threaduid" type="hidden" value="${threadUid}"></input>
+	<button type="button" class="btn btn-primary btn-sm" onclick="getNewPosts()" style="margin: 6px">Get new posts</button><br>
+</div>
 	<div class="form-group" style="margin: 10px;">
 		<input id="threaduid" type="hidden" value="${threadUid}"></input>
 		<label for="postname">Post name:</label>

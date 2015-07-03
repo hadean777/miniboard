@@ -1,6 +1,7 @@
 package com.hadean777.miniboard.webapp.controller;
 
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -74,6 +75,30 @@ public class ThreadController {
 			post.setMessage(textConverterService.textToHtml(data));
 			Long postUid = threadManager.addPost(post, threaduid);
 			result.setData(threaduid);
+			result.setSuccess(true);
+		} catch (BusinessLogicException ex) {
+			result.setSuccess(false);
+			result.setMessage(ex.getMessage());
+		}
+		
+		return result;
+	}
+	
+	@RequestMapping(value = "/common/getNewPosts.json", method = RequestMethod.POST)
+	@ResponseBody
+	public AjaxResult getNewPosts(@RequestParam Long threaduid,
+								@RequestParam Long lastpostuid) throws UnsupportedEncodingException {
+		
+		AjaxResult result = new AjaxResult();
+		
+		try {
+			List<Post> postList = threadManager.getNewPosts(threaduid, lastpostuid);
+			if (postList != null) {
+				result.setMessage(postList.size() + " new messages received");
+			} else {
+				result.setMessage("No new messages");
+			}
+			result.setData(postList);
 			result.setSuccess(true);
 		} catch (BusinessLogicException ex) {
 			result.setSuccess(false);

@@ -176,8 +176,6 @@ public class ThreadManagerImpl implements ThreadManager {
 	}
 	
 	public List<Post> getNewPosts(Long p_threadUid, Long p_lastPostUid) throws BusinessLogicException{
-		//TODO: return only new posts
-		
 		List<Post> result = null;
 		try {
 			if (p_threadUid != null){
