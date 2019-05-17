@@ -39,9 +39,11 @@ Thumbs.db
 target/
 build/
 .settings/
+.idea/
 
 # Else #
 ################
 *.*~
 .classpath
 .project
+*.iml
