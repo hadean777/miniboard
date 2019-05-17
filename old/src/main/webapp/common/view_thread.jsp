@@ -10,7 +10,7 @@ var posts = ${postsObj};
 </head>
 <body>
 <div class="form-group row" style="margin: 10px; padding: 5px; border: 1px solid grey;">
-	<div class="col-sm-4"><p class="lead"><b>${threadUid}</b></p></div>	
+	<div class="col-sm-4"><p class="lead"><b>#${threadUid}</b></p></div>
 	<div class="col-sm-4"><p class="lead" style="color: blue;"><b>${threadName}</b></p></div>
 	<div class="col-sm-4"><p class="lead" align="right"><b>${threadTime}</b></p></div>
 	<div class="col-sm-12"><p align="justify">${threadMessage}</p></div>
@@ -24,7 +24,7 @@ var posts = ${postsObj};
 	<div class="form-group post-record row" style="margin: 10px; padding: 5px; border: 1px solid grey">
 		
  		<div class="col-sm-4">
-			<p class="lead"><b>\${uid}</b></p>
+			<p class="lead"><b>#\${uid}</b></p>
 		</div>
 		<div class="col-sm-4">
 			<p class="lead" style="color: blue;"><b>\${name}</b></p>
